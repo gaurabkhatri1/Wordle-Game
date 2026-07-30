@@ -22,10 +22,13 @@
  *          one object per letter, in order.
  */
 export function checkGuess(guess, answer) {
+  const normalizedGuess = String(guess).toLowerCase();
+  const normalizedAnswer = String(answer).toLowerCase();
+
   // Turn each word into an array of single letters so we can loop over them.
   // "brave" -> ['b', 'r', 'a', 'v', 'e']
-  const guessLetters = guess.split('');
-  const answerLetters = answer.split('');
+  const guessLetters = normalizedGuess.split('');
+  const answerLetters = normalizedAnswer.split('');
 
   // We'll fill this array with a result object for each letter.
   // We start everyone as 'absent' (grey) and "upgrade" them below.

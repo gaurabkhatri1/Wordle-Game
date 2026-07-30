@@ -22,6 +22,7 @@ export const WORDS = [
     'flame',
     'grape',
     'house',
+    'hello',
     'input',
     'joker',
     'knife',
