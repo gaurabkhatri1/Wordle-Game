@@ -1,0 +1,27 @@
+/* src/index.css
+   ---------------------------------------------------------------------------
+   GLOBAL styles that apply to the entire page (the <body> and defaults).
+   Page-specific game styles live in App.css. Keeping them separate is a common,
+   tidy convention.
+   --------------------------------------------------------------------------- */
+
+/* A tiny "reset": remove the browser's default margin and make box sizing
+   predictable so widths include padding and borders. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  /* A clean system font stack — uses whatever nice font the OS provides. */
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Dark background with light text, just like the original Wordle. */
+  background-color: #121213;
+  color: #ffffff;
+
+  /* Center everything and give the page a comfortable minimum height. */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}

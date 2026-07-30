@@ -1,0 +1,168 @@
+/* src/App.css
+   ---------------------------------------------------------------------------
+   All the visual styling for the game itself: the grid, tiles, colours, and
+   the on-screen keyboard. The class names here match the className="..." values
+   we wrote in the components (.app, .board, .row, .tile, .keyboard, etc.).
+
+   The three status colours are the official Wordle palette:
+     - correct  (green)  #6aaa64
+     - present  (yellow) #c9b458
+     - absent   (grey)   #3a3a3c
+   --------------------------------------------------------------------------- */
+
+.app {
+  /* Stack the title, board, and keyboard in a centered vertical column. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 12px;
+  gap: 16px;
+}
+
+h1 {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #9a9a9a;
+  font-size: 0.95rem;
+}
+
+.error {
+  color: #e06c6c;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------ board -- */
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+}
+
+/* -------------------------------------------------------------------- tile -- */
+.tile {
+  width: 58px;
+  height: 58px;
+
+  /* Center the letter inside the square. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #3a3a3c;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  /* A gentle fade when a colour is applied after submitting a guess. */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* The three result colours. Notice we also hide the border so the filled
+   colour looks solid and clean. */
+.tile.correct {
+  background-color: #6aaa64;
+  border-color: #6aaa64;
+}
+
+.tile.present {
+  background-color: #c9b458;
+  border-color: #c9b458;
+}
+
+.tile.absent {
+  background-color: #3a3a3c;
+  border-color: #3a3a3c;
+}
+
+/* --------------------------------------------------------------- messages -- */
+.message {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.message .win {
+  color: #6aaa64;
+  font-weight: bold;
+}
+
+.message .lose {
+  color: #e06c6c;
+  font-weight: bold;
+}
+
+.play-again {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #6aaa64;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.play-again:hover {
+  background-color: #78b96f;
+}
+
+/* -------------------------------------------------------------- keyboard -- */
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.key {
+  min-width: 40px;
+  height: 52px;
+  padding: 0 6px;
+
+  border: none;
+  border-radius: 4px;
+  background-color: #818384;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* The wide Enter / Backspace keys. */
+.key.wide {
+  min-width: 62px;
+  font-size: 0.75rem;
+}
+
+/* The keyboard keys reuse the same three status colours as the tiles. */
+.key.correct {
+  background-color: #6aaa64;
+}
+
+.key.present {
+  background-color: #c9b458;
+}
+
+.key.absent {
+  background-color: #3a3a3c;
+}

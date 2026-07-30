@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+  index.html
+  ---------------------------------------------------------------------------
+  This is the ONE and ONLY HTML page in our app. React apps are called
+  "Single Page Applications" (SPAs) for exactly this reason: the browser loads
+  this single page, and then JavaScript (React) draws everything else on top.
+
+  The two important lines below are:
+    1. <div id="root"></div>  -> an empty box. React fills this box with the UI.
+    2. <script src="/src/main.jsx"> -> the entry point that starts our React app.
+  ---------------------------------------------------------------------------
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Wordle</title>
+</head>
+
+<body>
+  <!-- React will "mount" (render) the entire game inside this empty div. -->
+  <div id="root"></div>
+
+  <!-- type="module" lets us use modern `import`/`export` syntax in the browser. -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
